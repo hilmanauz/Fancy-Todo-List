@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <meta name="google-signin-client_id" content="327950843638-nflsslhbsva7c6kmikhdr3kbp5rnf08n.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Todo App</title>
+</head>
+<body>
+    <div class = "container">
+        <div class="row">
+            <div class="col-md-6 mx-auto p-0 ">
+                <div id= "card">
+                    <div class="login-box">
+                        <div class="login-snip"> 
+                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                            <label for="tab-1" class="tab">Login</label> 
+                            <input id="tab-2" type="radio" name="tab" class="sign-up">
+                            <label for="tab-2" class="tab">Registration</label>
+                            <div class="login-space">
+                                <div class="login">
+                                    <div class="group"> 
+                                        <label for="email-login" class="label">Email Address</label> 
+                                        <input id="email-login" type="text" class="input" placeholder="Enter your email address"> 
+                                    </div>
+                                    <div class="group"> 
+                                        <label for="password-login" class="label">Password</label> 
+                                        <input id="password-login" type="password" class="input" data-type="password" placeholder="Enter your password"> 
+                                    </div>
+                                    <div class="group"> 
+                                        <input type="submit" id="submit-login" class="button" value="Sign In"> 
+                                    </div>
+                                    <p class="text-center" style="color: white;">Or Sign In With</p>
+                                    <div class="g-signin2 d-flex justify-content-center" data-onsuccess="onSignIn"></div>
+                                    <div class="hr"></div>
+                                    <div class="foot"> <p>Created By Hilman Auzan</p> </div>
+                                </div>
+                                <div class="sign-up-form">
+                                    <div class="group"> 
+                                        <label for="email-regist" class="label">Email Address</label> 
+                                        <input id="email-regist" type="text" class="input" placeholder="Enter your email address"> 
+                                    </div>
+                                    <div class="group"> 
+                                        <label for="password-regist" class="label">Password</label> 
+                                        <input id="password-regist" type="password" class="input" data-type="password" placeholder="Create your password"> 
+                                    </div>
+                                    <div class="group"> 
+                                        <input type="submit" id="submit-regist" class="button" value="Sign Up"> 
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="foot"> 
+                                        <a href="#"><label for="tab-1">Already Member?</label> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+    <div class="container">
+        <div class="row" style="margin-top:90px;">
+            <div class="col-md-8" >
+                <div class="card card-white" id= "todo-list">
+                    <div class="card-body" >
+                        <h4 class="card-title d-inline-block mt-1" id="title">Amazing Todo list</h4>
+                        <div class="btn btn-light col-1.5 d-inline-block float-md-end" id="logout">&#10060</div>
+                        <hr>
+                        <ul class="nav nav-pills todo-nav d-inline-flex">
+                            <li role="presentation" class="nav-item active-task"><a href="" class="nav-link actived">Active</a></li>
+                            <li role="presentation" class="nav-item completed-task"><a href="" class="nav-link completed">Completed</a></li>
+                            <li role="presentation" class="nav-item all-task"><a href="" class="nav-link all">All</a></li>
+                        </ul>
+                        <button type="submit" class="btn btn-primary col-1.5 d-inline-block float-md-end" id="goto-add-todo">Add</button>
+                        <hr>
+                        <div class="todo-list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" id="weather-column">
+                <div class="card p-4" id="weather">
+                    <!-- <div class="d-flex">
+                        <h6 class="flex-grow-1">London</h6>
+                        <h6>16:08</h6>
+                    </div>
+                    <div class="d-flex flex-column temp mt-5 mb-3">
+                        <h1 class="mb-0 font-weight-bold" id="heading"> 13° C </h1> <span class="small grey">Stormy</span>
+                    </div>
+                    <div class="d-flex">
+                        <div class="temp-details flex-grow-1">
+                            <p class="my-1"> <img src="./css/matahari.png" height="17px"> <span> 40 km/h </span> </p>
+                            <p class="my-1"> <i class="fa fa-tint mr-2" aria-hidden="true"></i> <span> 84% </span> </p>
+                            <p class="my-1"> <img src="./css/angin.png" height="17px"> <span> 0.2h </span> </p>
+                        </div>
+                        <div> <img src="https://i.imgur.com/Qw7npIg.png" width="100px"> </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-white" id= "add-todo">
+                    <div class="card-body">
+                        <h4 class="card-title d-inline-block">What's Next?</h4>
+                        <button type="back" class="btn btn-primary col-1.5 d-inline-block float-md-end" id="back-home-add">Back</button>
+                        <hr>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-2 col-form-label">To-do</label>
+                            <div class="col-11">
+                                <input type="text" class="form-control" id ="todo-input" placeholder="What do you need to do today?">
+                            </div>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-2 col-form-label">Due date</label>
+                            <div class="col-11">
+                              <input class="form-control" type="date" id="date-input">
+                        </div>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-4 col-form-label">Description</label>
+                            <div class="col-11">
+                            <textarea class="form-control" rows="2" id ="description-input"></textarea>
+                        </div>
+                        <div id="button">
+                            <button type="button" class="btn btn-primary btn-lg col-2 mt-3" id="submit-todo">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-white" id= "edit-todo">
+                    <div class="card-body">
+                        <h4 class="card-title d-inline-block">What's Next?</h4>
+                        <button type="button" class="btn btn-primary col-1.5 d-inline-block float-md-end" id="back-home-edit">Back</button>
+                        <hr>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-2 col-form-label">To-do</label>
+                            <div class="col-11">
+                                <input type="text" class="form-control" id ="todo-edit" placeholder="What do you need to do today?">
+                        </div>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-2 col-form-label">Due date</label>
+                            <div class="col-11">
+                              <input class="form-control" type="date" id="date-edit">
+                        </div>
+                        <div class="add-items d-flex row">
+                            <label for="example-date-input" class="col-4 col-form-label">Description</label>
+                            <div class="col-11">
+                            <textarea class="form-control" rows="2" id ="description-edit"></textarea>
+                        </div>
+                        <div id="button">
+                            <button type="button" class="btn btn-primary btn-lg col-2 mt-3" id="submit-todo-edit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/test.js"></script>
+</body>
+</html>
